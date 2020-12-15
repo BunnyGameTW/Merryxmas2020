@@ -4,7 +4,7 @@
   <script>
   (async () => {
     try {
-      await navigator.mediaDevices.getUserMedia();
+      await navigator.mediaDevices.getUserMedia({video : true});
       console.log("GOT CAM");
     } catch (e) {
       console.log("GOT ERROR : " + e);
