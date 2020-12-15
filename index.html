@@ -1,7 +1,7 @@
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script>
+  <!-- <script>
   (async () => {
     try {
       await navigator.mediaDevices.getUserMedia({audio : true, video : true});
@@ -10,17 +10,17 @@
       console.log("GOT ERROR : " + e);
     }
   })();
-  </script>
+  </script> -->
 
   <script src="gesture-detector.js"></script>
   <script src="gesture-handler.js"></script>
-  <!-- vr-mode-ui="enabled: false" -->
+  <!-- " -->
   <body style="margin : 0px; overflow: hidden;">
     <a-scene
-      arjs = "sourceType: webcam; debugUIEnabled: false; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
+      arjs = "sourceType: webcam; debugUIEnabled: true; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
       embedded
       renderer="logarithmicDepthBuffer: true;"
-
+      vr-mode-ui="enabled: false
       gesture-detector
       id="scene"
     >
@@ -37,7 +37,7 @@
           obj-model="obj: url(res/Scraggy.obj); mtl: url(res/Scraggy.mtl)"
           class="clickable"
           gesture-handler
-          sound="src: url(res/bgm.mp3); autoplay: true"
+          sound="src: url(res/bgm.mp3); autoplay: true; loop: true;"
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
