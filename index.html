@@ -1,19 +1,16 @@
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
- 
-(async () => {
-  video.srcObject = await navigator.mediaDevices.getUserMedia({video: true});
-})();
-
-(async () => {
-  try {
-    await navigator.mediaDevices.getUserMedia({video: true});
-    console.log("GOT CAM");
-  } catch (e) {
-    console.log("GOT ERROR : " + e);
-  }
-})();
+  <script>
+  (async () => {
+    try {
+      await navigator.mediaDevices.getUserMedia();
+      console.log("GOT CAM");
+    } catch (e) {
+      console.log("GOT ERROR : " + e);
+    }
+  })();
+  </script>
 
   <script src="gesture-detector.js"></script>
   <script src="gesture-handler.js"></script>
